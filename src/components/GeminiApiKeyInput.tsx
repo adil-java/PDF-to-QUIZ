@@ -72,7 +72,7 @@ const GeminiApiKeyInput: React.FC<GeminiApiKeyInputProps> = ({ onApiKeySet }) =>
           <div className="relative mt-1">
             <Input
               id="api-key"
-              type={showApiKey ? 'text' : 'password'}
+              type="password"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
               placeholder="Enter your Gemini API key..."

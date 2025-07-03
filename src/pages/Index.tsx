@@ -25,12 +25,14 @@ interface Question {
 }
 
 const Index = () => {
+  const defaultGeminiKey = import.meta.env.VITE_GEMINI_API ?? '';
+  const [geminiApiKey, setGeminiApiKey] = useState(defaultGeminiKey);
+
   const [pdfText, setPdfText] = useState('');
   const [fileName, setFileName] = useState('');
   const [notes, setNotes] = useState('');
   const [totalQuestion, setTotalQuestions] = useState(10);
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [geminiApiKey, setGeminiApiKey] = useState(`${import.meta.env.VITE_GEMINI_API}`);
   const [isProcessingPdf, setIsProcessingPdf] = useState(false);
   const [isGeneratingNotes, setIsGeneratingNotes] = useState(false);
   const [isGeneratingQuiz, setIsGeneratingQuiz] = useState(false);
@@ -125,11 +127,10 @@ const Index = () => {
           </p>
         </div>
 
-        {!geminiApiKey && (
-          <div className="max-w-2xl mx-auto mb-8">
-            <GeminiApiKeyInput onApiKeySet={setGeminiApiKey} />
-          </div>
-        )}
+        {/* Always show API key input */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <GeminiApiKeyInput apiKey={geminiApiKey} onApiKeySet={setGeminiApiKey} />
+        </div>
 
         <div className="max-w-4xl mx-auto">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
