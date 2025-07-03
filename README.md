@@ -21,7 +21,7 @@ Gemini Quiz Weaver is a web application for creating, managing, and taking quizz
 
 ```bash
 git clone https://github.com/adil-java/gemini-quizzer.git
-cd gemini-quiz-weaver
+cd PDF-to-QUIZ
 npm install
 ```
 
