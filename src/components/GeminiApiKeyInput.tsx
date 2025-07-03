@@ -98,7 +98,7 @@ const GeminiApiKeyInput: React.FC<GeminiApiKeyInputProps> = ({ onApiKeySet ,gemi
         
         <div className="flex gap-2">
           <Button onClick={handleSaveApiKey} className="bg-yellow-600 hover:bg-yellow-700">
-            Save API Key
+            Use Default Key
           </Button>
           {apiKey && (
             <Button onClick={handleClearApiKey} variant="outline">
