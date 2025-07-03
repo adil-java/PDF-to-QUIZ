@@ -30,7 +30,7 @@ const Index = () => {
   const [notes, setNotes] = useState('');
   const [totalQuestion, setTotalQuestions] = useState(10);
   const [questions, setQuestions] = useState<Question[]>([]);
-  const [geminiApiKey, setGeminiApiKey] = useState('');
+  const [geminiApiKey, setGeminiApiKey] = useState(`${import.meta.env.VITE_GEMINI_API}`);
   const [isProcessingPdf, setIsProcessingPdf] = useState(false);
   const [isGeneratingNotes, setIsGeneratingNotes] = useState(false);
   const [isGeneratingQuiz, setIsGeneratingQuiz] = useState(false);
