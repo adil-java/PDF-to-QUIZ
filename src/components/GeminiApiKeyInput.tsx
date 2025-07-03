@@ -9,10 +9,14 @@ import { useToast } from '@/hooks/use-toast';
 
 interface GeminiApiKeyInputProps {
   onApiKeySet: (apiKey: string) => void;
+  geminiApiKey: (defKey: string) => void;
+
 }
 
-const GeminiApiKeyInput: React.FC<GeminiApiKeyInputProps> = ({ onApiKeySet }) => {
-  const [apiKey, setApiKey] = useState('');
+const GeminiApiKeyInput: React.FC<GeminiApiKeyInputProps> = ({ onApiKeySet ,geminiApiKey }) => {
+
+  const defKey= import.meta.env.VITE_GEMINI_API ?? ""
+  const [apiKey, setApiKey] = useState(defKey);
   const [showApiKey, setShowApiKey] = useState(false);
   const { toast } = useToast();
 

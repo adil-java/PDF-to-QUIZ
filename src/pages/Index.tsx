@@ -25,7 +25,7 @@ interface Question {
 }
 
 const Index = () => {
-  const defaultGeminiKey = import.meta.env.VITE_GEMINI_API ?? '';
+  const defaultGeminiKey = import.meta.env.VITE_GEMINI_API ?? "";
   const [geminiApiKey, setGeminiApiKey] = useState(defaultGeminiKey);
 
   const [pdfText, setPdfText] = useState('');
